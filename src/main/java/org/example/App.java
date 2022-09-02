@@ -27,7 +27,7 @@ public class App
         b = subVar;
 
         //Выводим для проверки
-        System.out.println( "Результирующее значение переменных:" );
+        System.out.println( "Конечное значение переменных:" );
         System.out.println( a );
         System.out.println( b );
 
