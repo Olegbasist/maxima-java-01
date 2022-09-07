@@ -13,17 +13,17 @@ public class App
 
         Scanner in = new Scanner(System.in);
         System.out.println("Говорите точно сколько фибаначить: ");
-        byte n = in.nextByte();
+        byte N = in.nextByte();
 
         System.out.println("Вот сколько мы нафибаначили: ");
-        System.out.print(fibonazzi(n));
+        System.out.print(fibonazzi(N));
 
     }
 
-    public static long fibonazzi(byte n) {
-        return n == 0 ? 0
-                : n == 1 ? 1
-                : fibonazzi((byte) (n-1)) + fibonazzi((byte) (n-2));
+    public static long fibonazzi(byte N) {
+        return N == 0 ? 0
+                : N == 1 ? 1
+                : fibonazzi((byte) (N-1)) + fibonazzi((byte) (N-2));
 
     }
 }
