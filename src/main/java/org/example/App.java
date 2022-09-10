@@ -5,10 +5,9 @@ package org.example;
 
 import java.util.Scanner;
 
-public class App
-{
+public class App {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
         System.out.println("Выберите год:");
@@ -20,12 +19,13 @@ public class App
 
         int days = daysCount(month, year);
         String monthName = monthName(month);
-        System.out.println("В " +monthName+ " " +year+ "-го года: " +days+ " дней" );
+        System.out.println("В " + monthName + " " + year + "-го года: " + days + " дней");
 
         String yearType = yearType(year);
         System.out.println(yearType);
     }
-    public static byte daysCount(byte month, int year){
+
+    public static byte daysCount(byte month, int year) {
         byte days = -1;
         switch (month) {
 
@@ -58,20 +58,26 @@ public class App
 
     }
 
-    public static String yearType (int year) {
+    public static String yearType(int year) {
         String yearType;
 
         if (year % 400 == 0
                 || year % 100 != 0 && year % 4 == 0) {
-                    yearType = "Это високосный год";
+            if (year > 2022)
+                yearType = "Это будет високосный год";
+            else
+                yearType = "Это был високосный год";
+        } else {
+            if (year > 2022)
+                yearType = "Это будет обычный невисокосный год";
+            else
+                yearType = "Это был обычный невисокосный год";
         }
-            else {
-                yearType = "Это обычный невисокосный год";
-            }
+
 
         return yearType;
-
     }
+
 
     public static String monthName (byte month){
         String monthName;
