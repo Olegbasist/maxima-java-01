@@ -45,10 +45,10 @@ public class App {
                 days = 30;
                 break;
             case 2:
-                year % 400 == 0
-                        || year % 100 != 0 && year % 4 == 0
-                        ? days = 29
-                        : days = 28;
+                days = (byte) (year % 400 == 0
+                                                                        || year % 100 != 0 && year % 4 == 0
+                                                                        ? 29
+                                                                        : 28);
                 /*if (year % 400 == 0
                         || year % 100 != 0 && year % 4 == 0)
                     days = 29;
