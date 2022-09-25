@@ -18,7 +18,7 @@ public class App {
         int n = in.nextInt();
         System.out.println(isPrime(n));
         if (isSimple(n) == 0) {
-            System.out.println("Минимальный делитель: 1");
+            System.out.println("Число делиться только на 1 и на само себя");
         }
         else {
         System.out.println("Минимальный делитель: " + isSimple(n));
@@ -37,6 +37,10 @@ public class App {
     }
 // Вычисляем минимальный делитель
     public static int isSimple(int n){
+
+        if (n <= 2){
+            return 0;
+        }
 
         for (int i = 2; i < sqrt(n)+1; i++){
             if (n % i == 0){
