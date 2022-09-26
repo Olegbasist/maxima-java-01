@@ -1,6 +1,6 @@
 package org.example;
 
-// TODO: 08.09.2022 Написать функцию byte maxDigitsSumPosition(int[] arr),
+// 08.09.2022 Написать функцию byte maxDigitsSumPosition(int[] arr),
 //  которая вернет наибольший индекс элемента, имеющего максимальную сумму цифр.
 
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        // Задаем и проверяем массив
+// Задаем и проверяем массив
 
         Scanner in = new Scanner(System.in);
         System.out.println("Сколько будем считать? ");
