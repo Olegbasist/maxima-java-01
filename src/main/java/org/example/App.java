@@ -7,12 +7,28 @@ import java.util.Scanner;
 
 public class App {
 
+    /*public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Сколько? ");
+        int n = in.nextInt();
+        System.out.println(digitsSum(n));
+    }
+
+        private static int digitsSum(int n) {
+
+            return (n < 0) ? digitsSum(-n) : (n == 0) ? 0 : n % 10 + digitsSum(n / 10);
+        }*/
+
+
+
+
     public static void main(String[] args) {
 
  // Задаем и проверяем массив
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Насколько всё длинно? ");
+        System.out.println("Сколько будем считать? ");
         int[] arr = new int[in.nextInt()];
 
         System.out.println("Посчитаемся от 1 до " + arr.length);
@@ -21,8 +37,6 @@ public class App {
 // Выводим результаты
 
         System.out.println(maxDigitsSumPosition(arr));
-        //System.out.println(sumDigits(84));
-
 
     }
 // Ищем наибольшую сумму
@@ -32,39 +46,34 @@ public class App {
 
         for (int i = 0; i < arr.length; i++) {
 // Заполняем и проверяем, что элементы массива заполнились значениями
-            arr[i] = i+1;
+            arr[i] = i + 1;
             //System.out.println(arr[i]);
 // Считаем
 
             if (arr[i] < 10) {
-               sum = arr[i];
+                int maximum = arr[i];
             }
-            else {
-               int array = arr[i];
-               while (array != 0) {
-                   sum += (array % 10);
-                   array /= 10;
-               }
+            else
+            {
+                do {
+
+                    maxDigitsSumPosition(arr[i])
+                }
+                while (array != 0);
 
             }
 
-            //return arr[i] >= 10 ? arr[i] % 10 + maxDigitsSumPosition(i / 10) : arr[i];
 
-            //(arr[i] % 10 + summ(arr[i] / 10)) ;
-                    //> summ ? summ : summ = arr[i] % 10 + summ(arr[i] / 10);
-        }
-        /*while (i != arr.length){
-            //summ = i % 10 + summ(i / 10);
-            i++;
-            return i;
-        }*/
-        return sum;
-
-
+        return maximum;
     }
 
+    private static int digitsSum(int n) {
+
+        return (n == 0) ? 0 : n % 10 + digitsSum(n / 10);
+    }
 
 }
+
 /////////////////////////////////////////////////////////////////////
 /*зад2=щщёт циклом 🔧
  int summacifr == 0;
