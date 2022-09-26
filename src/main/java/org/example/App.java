@@ -51,7 +51,7 @@ public class App {
 
         }
 
-        return index;
+        return maximum;
     }
 
     private static int digitsSum(int n) {
