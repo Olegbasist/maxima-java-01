@@ -30,12 +30,8 @@ public class App {
             //arr[i] = i + 1;
             byte sum = (byte) digitsSum(arr[i]);
 
-// Вывод индекса, значения и суммы цифр
+// Сравниваем текущую сумму с максимальной
 
-                if (arr[i] < 10 & sum > maximum) {
-                    maximum = (byte) arr[i];
-                    index = i;
-                }
                 if (sum > maximum){
                     maximum = sum;
                     index = i;
@@ -47,6 +43,7 @@ public class App {
         return index;
     }
 
+// Считаем сумму цифр числа
     private static int digitsSum(int n) {
 
         return (n == 0) ? 0 : n % 10 + digitsSum(n / 10);
