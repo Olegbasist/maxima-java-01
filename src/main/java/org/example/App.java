@@ -10,7 +10,7 @@ public class App {
 
 // Задаем и проверяем массив
 
-        int[] arr = new int[]{7890,1,23,456,10000,1212121212,7298390,7983,8,40,2093,0};
+        int[] arr = new int[]{1,23,456,7070,10000,1001,1212121212};
 
         int i = maxDigitsSumPosition(arr);
         byte sum = (byte) digitsSum(arr[i]);
@@ -32,7 +32,7 @@ public class App {
 
 // Сравниваем текущую сумму с максимальной
 
-                if (sum > maximum){
+                if (sum >= maximum){
                     maximum = sum;
                     index = i;
                 }
