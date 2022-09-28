@@ -13,23 +13,24 @@ public class App {
 // Задаем и проверяем массив
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Сколько будем считать? ");
-        int[] arr = new int[in.nextInt()];
+        //System.out.println("Сколько будем считать? ");
+        int[] arr = new int[]{7890,1,23,456,10000,1212121212};
 
-        System.out.println("Посчитаемся от 1 до " + arr.length);
+        //System.out.println("Посчитаемся от 1 до " + arr.length);
         System.out.println("Максимальное значение будет в ячейке: " +maxDigitsSumPosition(arr));
+        System.out.println("Сумма цифр числа "+arr[maxDigitsSumPosition(arr)]+ " равна " +digitsSum(arr[maxDigitsSumPosition(arr)]) );
 
     }
 
 // Ищем наибольшую сумму
-    private static int maxDigitsSumPosition(int[] arr) {
+    public static int maxDigitsSumPosition(int[] arr) {
 
         byte maximum = 0;
         int index = 0;
 
 
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
+            //arr[i] = i + 1;
             byte sum = (byte) digitsSum(arr[i]);
 
 // Вывод индекса, значения и суммы цифр
