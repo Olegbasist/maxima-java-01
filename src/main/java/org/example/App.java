@@ -27,8 +27,8 @@ public class App {
 
 
         for (int i = 0; i < arr.length; i++) {
-            //arr[i] = i + 1;
-            byte sum = (byte) digitsSum(arr[i]);
+
+            byte sum = arr[i] < 10 ? (byte) arr[i] : (byte) digitsSum(arr[i]);
 
 // Сравниваем текущую сумму с максимальной
 
