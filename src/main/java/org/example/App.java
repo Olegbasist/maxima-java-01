@@ -3,8 +3,6 @@ package org.example;
 // 08.09.2022 Написать функцию byte maxDigitsSumPosition(int[] arr),
 //  которая вернет наибольший индекс элемента, имеющего максимальную сумму цифр.
 
-//import java.util.Scanner;
-
 public class App {
 
 
@@ -12,11 +10,8 @@ public class App {
 
 // Задаем и проверяем массив
 
-        //Scanner in = new Scanner(System.in);
-        //System.out.println("Сколько будем считать? ");
-        int[] arr = new int[]{7890,1,23,456,10000,1212121212,7298390};
+        int[] arr = new int[]{1,23,456,7070,10000,1001,1212121212};
 
-        //System.out.println("Посчитаемся от 1 до " + arr.length);
         int i = maxDigitsSumPosition(arr);
         byte sum = (byte) digitsSum(arr[i]);
         System.out.println("Максимальное значение будет в ячейке: " +i);
@@ -32,22 +27,12 @@ public class App {
 
 
         for (int i = 0; i < arr.length; i++) {
-            //arr[i] = i + 1;
-            byte sum = (byte) digitsSum(arr[i]);
 
-// Вывод индекса, значения и суммы цифр
+            byte sum = arr[i] < 10 ? (byte) arr[i] : (byte) digitsSum(arr[i]);
 
-            /*System.out.print(i);
-            System.out.print(" ");
-            System.out.print(arr[i]);
-            System.out.print(" ");
-            System.out.println(sum);*/
+// Сравниваем текущую сумму с максимальной
 
-                if (arr[i] < 10 & sum > maximum) {
-                    maximum = (byte) arr[i];
-                    index = i;
-                }
-                if (sum > maximum){
+                if (sum >= maximum){
                     maximum = sum;
                     index = i;
                 }
@@ -58,6 +43,7 @@ public class App {
         return maximum;
     }
 
+// Считаем сумму цифр числа
     private static int digitsSum(int n) {
 
         return (n == 0) ? 0 : n % 10 + digitsSum(n / 10);
